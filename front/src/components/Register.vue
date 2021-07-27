@@ -4,9 +4,9 @@
          <b-row>
              <b-cols cols='12'>
                 <label for="input-user">Usuario</label>
-                 <b-form-input type=number v-model="user" :state="valida"> </b-form-input>
+                 <b-form-input type=text v-model="user" :state="valida"> </b-form-input>
                 <label for="input-nombre">Nombre</label>
-                 <b-form-input type=number v-model="nombre" :state="valida"> </b-form-input>
+                 <b-form-input type=text v-model="nombre" :state="valida"> </b-form-input>
                 <label for="input-address">Direccion</label>
                  <b-form-input type=text v-model="addres" :state="valida"> </b-form-input>
                 <label for="input-poblacion">Población</label>
@@ -36,12 +36,15 @@ export default {
         }
     },
     computed:{
-        valida(){
-            return 
-                this.codigo.length === 5 ? true : false,
-                this.user.length > 4 ? true : false
-
-        }
+        valida_user(){
+            return this.user.length > 3 ? true : false
+        },
+        valida_nombre(){
+            return this.nombr.length > 3 ? true : false
+        },
+        valida_postal(){
+            return this.codigo.length === 5 ? true : false
+        },
     }
      
 }
