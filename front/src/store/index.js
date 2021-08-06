@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+<<<<<<< HEAD
     token: null
   },
   mutations: {
@@ -45,5 +46,14 @@ export default new Vuex.Store({
       }
     }
   },
+=======
+      },
+  mutations: {
+    
+  },
+  actions: {
+   
+    },
+>>>>>>> c36021ce963a3e60e4f1eb8d6b5dfcab8055f8f4
   modules: {},
 });

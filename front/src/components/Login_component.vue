@@ -4,7 +4,6 @@
 
 <script>
 export default {
-name: 'Login_component',
-}
+  name: "Login_component",
+};
 </script>
-
