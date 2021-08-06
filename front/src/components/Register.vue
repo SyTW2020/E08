@@ -131,7 +131,7 @@ export default {
   methods: {
     registrar(){
       
-      axios.post{"",this.form}
+      //axios.post{"",this.form}
       console.log(this.form)
     }
   }
