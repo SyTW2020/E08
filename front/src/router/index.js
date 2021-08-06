@@ -31,6 +31,7 @@ const routes = [
     name: "Login",
     component: Login,
   },
+ 
 ];
 
 const router = new VueRouter({
