@@ -5,14 +5,26 @@ require('dotenv').config()
 
 const app = express();
 
+// cors
+const cors = require('cors');
+var corsOptions = {
+    origin: '*', // Reemplazar con dominio
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+app.use(cors(corsOptions));
+
 // capturar body
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 
 // Conexión a Base de datos
-const uri = `mongodb+srv://API-PRUEBA:TldragRrKmWY5PW2@cluster0.ybpqe.mongodb.net/nombre-db?retryWrites=true&w=majority`;
+//const uri = `mongodb+srv://API-PRUEBA:TldragRrKmWY5PW2@cluster0.ybpqe.mongodb.net/nombre-db?retryWrites=true&w=majority`;
 
-//const uri = `mongodb+srv://:${process.env.PASSWORD}@cluster0.ybpqe.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
+var usuario  = process.env.USER; 
+var cono = process.env.PASSWORD; // '42348901293989849243'
+
+
+const uri = `mongodb+srv://${usuario}:${cono}@cluster0.ybpqe.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
 //const uri = `mongodb+srv://API-PRUEBA:<password>@cluster0.ybpqe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const option = { useNewUrlParser: true, useUnifiedTopology: true }
 
