@@ -6,14 +6,10 @@ const bcrypt = require("bcrypt");
 
 const jwt = require("jsonwebtoken");
 
-<<<<<<< HEAD
 const Joi = require('@hapi/joi');
 
 require('dotenv').config()
 
-=======
-const Joi = require("@hapi/joi");
->>>>>>> c36021ce963a3e60e4f1eb8d6b5dfcab8055f8f4
 const schemaRegister = Joi.object({
   name: Joi.string().min(3).max(255).required(),
   email: Joi.string().min(6).max(1024).required().email(),
@@ -25,7 +21,6 @@ const schemaRegister = Joi.object({
 });
 
 const schemaLogin = Joi.object({
-<<<<<<< HEAD
     email: Joi.string().min(6).max(1024).required().email(),
     password: Joi.string().min(8).max(255).required()
 })
@@ -87,37 +82,6 @@ try{
 
 const userDB = await user.save();
 res.json({
-=======
-  email: Joi.string().min(6).max(1024).required().email(),
-  password: Joi.string().min(8).max(255).required(),
-});
-
-router.post("/login", async (req, res) => {
-  //validaciones
-  const { error } = schemaLogin.validate(req.body);
-  if (error) return res.status(400).json({ error: error.details[0].message });
-
-  const user = await User.findOne({ email: req.body.email });
-  if (!user)
-    return res
-      .status(400)
-      .json({ error: true, mensaje: "email no encontrado" });
-
-  const pass = await bcrypt.compare(req.body.password, user.password);
-  if (!pass)
-    return res.status(400).json({ error: true, mensaje: "contraseña mal" });
-
-  //crear token
-  const token = jwt.sign(
-    {
-      name: user.name,
-      id: user._id,
-    },
-    process.env.TOKEN_SECRET
-  );
-
-  res.json({
->>>>>>> c36021ce963a3e60e4f1eb8d6b5dfcab8055f8f4
     error: null,
     mensaje: "Hey",
     token: token,
