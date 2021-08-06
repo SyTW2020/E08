@@ -8,8 +8,7 @@
         <b-col sm="3">
           <b-form-input
             type="text"
-            v-model="user"
-            :state="valida"
+            v-model="form.user"
           ></b-form-input>
         </b-col>
       </b-row>
@@ -20,8 +19,7 @@
         <b-col sm="3">
           <b-form-input
             type="email"
-            v-model="email"
-            :state="valida"
+            v-model="form.email"
           ></b-form-input>
         </b-col>
       </b-row>
@@ -32,8 +30,7 @@
         <b-col sm="3">
           <b-form-input
             type="password"
-            v-model="pass"
-            :state="valida"
+            v-model="form.pass"
           ></b-form-input>
         </b-col>
       </b-row>
@@ -44,8 +41,7 @@
         <b-col sm="3">
           <b-form-input
             type="text"
-            v-model="nombre"
-            :state="valida"
+            v-model="form.nombre"
           ></b-form-input>
         </b-col>
       </b-row>
@@ -56,8 +52,7 @@
         <b-col sm="3">
           <b-form-input
             type="text"
-            v-model="apellidos"
-            :state="valida"
+            v-model="form.apellidos"
           ></b-form-input>
         </b-col>
       </b-row>
@@ -66,7 +61,7 @@
           <label for="input-numero">Numero</label>
         </b-col>
         <b-col sm="3">
-          <b-form-input type="tel" v-model="numero" :state="valida">
+          <b-form-input type="tel" v-model="form.numero">
           </b-form-input>
         </b-col>
       </b-row>
@@ -75,7 +70,7 @@
           <label for="input-address">Direccion</label>
         </b-col>
         <b-col sm="3">
-          <b-form-input type="text" v-model="address" :state="valida">
+          <b-form-input type="text" v-model="form.address" >
           </b-form-input>
         </b-col>
       </b-row>
@@ -86,8 +81,8 @@
         <b-col sm="3">
           <b-form-input
             type="text"
-            v-model="poblacion"
-            :state="valida"
+            v-model="form.poblacion"
+            
           ></b-form-input>
         </b-col>
       </b-row>
@@ -104,12 +99,12 @@
               day: 'numeric',
             }"
             locale="es"
-            v-model="cumple"
+            v-model="form.cumple"
           >
           </b-form-datepicker>
         </b-col>
       </b-row>
-      <b-col  sm="2" class="pb-4" ><b-button>Registrarse</b-button></b-col>
+      <b-col  sm="2" class="pb-4" ><b-button v-on:click="registrar()">Registrarse</b-button></b-col>
     </b-container>
   </div>
 </template>
@@ -119,26 +114,24 @@ export default {
   name: "Register",
   data() {
     return {
+      form:{
       user: "",
       email: "",
       pass: "",
       nombre: "",
-      addess: "",
+      apellidos:"",
+      numero:"",
+      address: "",
       poblacion: "",
       codigo: "",
       cumple: "",
+      }
     };
   },
-  computed: {
-    valida_user() {
-      return this.user.length > 3 ? true : false;
-    },
-    valida_nombre() {
-      return this.nombr.length > 3 ? true : false;
-    },
-    valida_postal() {
-      return this.codigo.length === 5 ? true : false;
-    },
-  },
+  methods: {
+    registrar(){
+      console.log(this.form)
+    }
+  }
 };
 </script>
