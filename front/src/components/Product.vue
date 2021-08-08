@@ -5,9 +5,9 @@
     <img src="https://www.asrock.com/mb/photo/Z490%20Pro4(M1).png">
     <span class="name"> Z490-A Pro </span>
     <span class="price"> 120€ </span>
-    <div class="hover flex">
-      <button class="button"><i class="fa fa-shopping-cart"></i></button>
-      <button class="button"> Al carrito </button>
+    <div class="hover flex justify-evenly items-center w-full ">
+      <button class="button w-3/12 bg-blue-500" ><i class="fa fa-shopping-cart"></i></button>
+      <button class="button w-7/12 bg-red-500"> Detalles </button>
     </div>
   </div>
 
@@ -60,6 +60,7 @@
     height: 20vw;
     width:  15vw;
     background-color: #FFFFFF;
+
     text-align: center;
     overflow: hidden;
   }
@@ -76,7 +77,7 @@
   .price {
     font-size: 1.7vw;
     /* display: block; */
-    color: #000000;
+    /* color: #000000; */
     font-weight: bold;
   }
 /*
