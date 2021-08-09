@@ -4,10 +4,17 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+<<<<<<< HEAD
     "build": "babel src --out-dir build",
     "test:unit": "vue-cli-service test:unit",
     "dev": "nodemon index.js --exec babel-node",
     "start": "node build/index.js",
+=======
+    "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
+    "dev": "nodemon index",
+    "start": "node index",
+>>>>>>> hernan
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -17,9 +24,13 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/vue-fontawesome": "^2.0.2",
     "@hapi/joi": "^17.1.1",
+<<<<<<< HEAD
     "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
+=======
+    "bcrypt": "^5.0.1",
+>>>>>>> hernan
     "body-parser": "^1.19.0",
     "bootstrap": "^5.0.2",
     "bootstrap-vue": "^2.21.2",
@@ -49,12 +60,15 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/test-utils": "^1.0.3",
+    "autoprefixer": "^9.8.6",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",
     "nodemon": "^2.0.12",
     "prettier": "^2.2.1",
+    "postcss": "^7.0.36",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7",
     "vue-template-compiler": "^2.6.11"
   }
 }
