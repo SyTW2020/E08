@@ -1,5 +1,5 @@
 <template>
-  <p>Prueba componente Login_component</p>
+  <div class="flex items-center justify-center bg-green-300"></div>
 </template>
 
 <script>

@@ -2,7 +2,7 @@
   <!--<div class="product" v-on:mouseover="mouseOn" v-on:mouseleave="mouseLeave">-->
   <div class="card">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <img src="https://www.asrock.com/mb/photo/Z490%20Pro4(M1).png">
+    <img class="img" src="https://www.asrock.com/mb/photo/Z490%20Pro4(M1).png">
     <span class="name"> Z490-A Pro </span>
     <span class="price"> 120€ </span>
     <div class="hover flex justify-evenly items-center w-full ">
@@ -53,6 +53,10 @@
 </script>
 
 <style>
+  .img {
+    max-width: 100%;
+  }
+
   .card {
     box-shadow: 0 0.5vh 1vh #BABABA;
     margin: auto;
@@ -64,9 +68,7 @@
     text-align: center;
     overflow: hidden;
   }
-  img {
-    max-width: 100%;
-  }
+  
   
   .name {
     font-size: 1.4vw;
