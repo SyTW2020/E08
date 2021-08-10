@@ -34,10 +34,6 @@
 <script>
 export default {
   name: "Header",
-<<<<<<< HEAD
-};
-</script>
-=======
   prop: {
       logged: {
         type: Boolean,
@@ -79,4 +75,3 @@ export default {
 </style>
 
          
->>>>>>> hernan

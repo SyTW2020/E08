@@ -3,6 +3,8 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Registro from "../views/Registro.vue";
 import Login from "../views/Login.vue";
+import store from "../store/index"
+
 
 Vue.use(VueRouter);
 
@@ -18,8 +20,10 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    component: () => 
+    import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    meta: {rutaProtegida: true}
+   
   },
   {
     path: "/registro",
@@ -39,5 +43,19 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 });
+
+/* eslint-disable */
+router.beforeEach((to, from, next) => {
+
+  const checkRuta = to.matched.some(item => item.meta.rutaProtegida)
+  
+  if( checkRuta && store.state.token === null ) {
+    next('/')
+  } else{
+    next()
+  }
+  
+  })
+  /* eslint-enable */
 
 export default router;

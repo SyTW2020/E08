@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <img class="img" src="https://www.asrock.com/mb/photo/Z490%20Pro4(M1).png">
     <span class="name"> Z490-A Pro </span>
-    <span class="price"> 120€ </span>
+    <span class="price"> 125€ </span>
     <div class="hover flex justify-evenly items-center w-full ">
       <button class="button w-3/12 bg-blue-500" ><i class="fa fa-shopping-cart"></i></button>
       <button class="button w-7/12 bg-red-500"> Detalles </button>

@@ -5,11 +5,16 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    token: null
+    token: null,
+
   },
   mutations: {
     setToken(state,payload){
       state.token=payload
+    },
+    setProducts(state,payload){
+      state.products=payload
+
     }
   },
   actions: {
@@ -18,7 +23,7 @@ export default new Vuex.Store({
       console.log(commit)
       console.log(usuario)
       try {                    //url de postman
-        const res = await fetch('http://localhost:3001/api/user/login', {
+        const res = await fetch('https://prueba-tienda-calor.herokuapp.com/api/user/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -26,11 +31,11 @@ export default new Vuex.Store({
           body: JSON.stringify(usuario)
         })
         const resDB = await res.json()
-        console.log(resDB.data.token)
+        console.log(resDB.token)
 
-        commit('setToken', resDB.data.token)
+        commit('setToken', resDB.token)
 
-        localStorage.setItem('token', resDB.data.token)
+        localStorage.setItem('token', resDB.token)
 
       } catch (error) {
         console.log(error)
