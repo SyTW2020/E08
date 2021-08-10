@@ -44,8 +44,9 @@
       </div>
       
       <div>
-        <button type="submit" class="w-full py-2 px-4 border text-base bg-gray-100 group hover:bg-gray-200 border-transparent font-medium rounded-md text-black  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400 transition duration-300">
-          Crear cuenta
+        <button type="submit" to="/registro" class="w-full py-2 px-4 border text-base bg-gray-100 group hover:bg-gray-200 border-transparent font-medium rounded-md text-black  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400 transition duration-300">
+          <router-link to="/registro">Crear cuenta</router-link>
+          
         </button>
       </div>
     </div>
