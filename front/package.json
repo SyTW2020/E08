@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "babel src --out-dir build",
     "test:unit": "vue-cli-service test:unit",
+    "test:unit:watch": "vue-cli-service test:unit --watchAll",
     "dev": "nodemon index.js --exec babel-node",
     "start": "node build/index.js",
     "lint": "vue-cli-service lint"

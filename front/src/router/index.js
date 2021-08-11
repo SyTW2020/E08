@@ -35,6 +35,11 @@ const routes = [
     name: "Login",
     component: Login,
   },
+  {
+    path: "/perfil",
+    name: "Profile",
+    component: Profile,
+  },
  
 ];
 
