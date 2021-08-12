@@ -37,12 +37,13 @@
                 <!--</div>-->
               </div>
             </div>
-            
-            <div>
-              <label class="block text-gray-700 text-base font-bold mb-2" for="cumple">Fecha de nacimiento</label>
-              <!--<div class="rounded shadow -space-y-px">-->
-              <input type="date" name="cumple" id="cumple" required class="shadow appearance-none border rounded py-2 px-3 w-full text-gray-700 leading-tight focus:outline-none">
-            </div>
+
+              <div>
+                <label class="block text-gray-700 text-base font-bold mb-2" for="apellidos">Número telefónico</label>
+                <!--<div class="rounded shadow -space-y-px">-->
+                <input type="number" name="number" id="number" required placeholder="ej: 672098618 " class="shadow appearance-none border rounded py-2 px-3 w-full text-gray-700 leading-tight focus:outline-none">
+                <!--</div>-->
+              </div>
 
             <div>
               <label class="block text-gray-700 text-base font-bold mb-2" for="email">Correo</label>
@@ -66,19 +67,6 @@
               <label class="block text-gray-700 text-base font-bold mb-2" for="address">Dirección</label>
               <!--<div class="rounded shadow -space-y-px">-->
               <input type="text" name="address" id="address" required placeholder="ej: Urbanización Chancleta, Calle Topacio" class="shadow appearance-none border rounded py-2 px-3 w-full text-gray-700 leading-tight focus:outline-none">
-            </div>
-            <div class="flex space-x-2">
-              <div class="w-1/2">
-                <label class="block text-gray-700 text-base font-bold mb-2" for="number">Número</label>
-                <!--<div class="rounded shadow -space-y-px">-->
-                <input type="text" name="number" id="number" required placeholder="ej: 16" class="shadow appearance-none border rounded py-2 px-3 w-full text-gray-700 leading-tight focus:outline-none">
-              </div>
-
-              <div class="w-1/2">
-                <label class="block text-gray-700 text-base font-bold mb-2" for="door">Puerta</label>
-                <!--<div class="rounded shadow -space-y-px">-->
-                <input type="text" name="door" id="door" required placeholder="ej: 1C" class="shadow appearance-none border rounded py-2 px-3 w-full text-gray-700 leading-tight focus:outline-none">
-              </div>
             </div>
 
             <div class="flex space-x-2">
@@ -120,14 +108,23 @@ export default {
       pass: "",
       addess: "",
       number: "",
-      door: "",
       poblacion: "",
       codigo: "",
-      cumple: "",
     };
   },
 }
 </script>
-
+}
 <style>
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 </style>
