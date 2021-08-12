@@ -9,7 +9,7 @@
         <!-- Search -->
         <div class="absolute inset-x-0 m-auto w-3/12">
           <div class="bg-white flex items-center rounded-full shadow-xl ">
-            <input class="ml-4 rounded-l-full w-full py-3 px-full text-gray-700 leading-tight focus:outline-none" id="search" type="text" placeholder="Search">
+            <input  id="search" type="search" placeholder="Search" class="ml-4 rounded-l-full w-full py-3 px-full text-gray-700 leading-tight focus:outline-none">
             
             <div>
               <button class="bg-blue-500 text-white rounded-full px-2.5 py-2.5 mr-2 hover:bg-blue-400 focus:outline-none  flex items-center justify-center">

@@ -18,7 +18,6 @@
           </div>
           <div>
             <p class="block text-gray-700 text-base font-bold mb-2" for="username">Contraseña</p>
-            <input type="hidden" name="remember" value="true"/>
             <div class="rounded shadow -space-y-px">
               <input type="password" name="password" id="password" autocomplete="current-password" required placeholder="***********" class="shadow appearance-none border rounded py-2 px-3 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
@@ -42,12 +41,8 @@
           </div>
         </div>
       </div>
-      
-      <div>
-        <button type="submit" to="/registro" class="w-full py-2 px-4 border text-base bg-gray-100 group hover:bg-gray-200 border-transparent font-medium rounded-md text-black  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400 transition duration-300">
-          <router-link to="/registro">Crear cuenta</router-link>
-          
-        </button>
+      <div class="flex">
+          <router-link to="/registro" class="w-full py-2 px-4 text-center border text-base bg-gray-100 group hover:bg-gray-200 border-transparent font-medium rounded-md text-black  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400 transition duration-300">Crear cuenta</router-link>
       </div>
     </div>
   </div>
