@@ -1,6 +1,6 @@
 <template>
   <!--<div class="product" v-on:mouseover="mouseOn" v-on:mouseleave="mouseLeave">-->
- <div class="productos">
+ <div class="productos flex" >
     <div :key = "product.id" v-for="product in allProducts">
       
   <div class="card">

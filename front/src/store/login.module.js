@@ -17,6 +17,19 @@ const actions = {
         commit('setData', res.data.datos)
         localStorage.setItem('token', res.data.token)
         localStorage.setItem('data', res.data.datos)
+    }, 
+    readToken({ commit }) {
+      if(localStorage.getItem('token')){
+        commit('setToken', localStorage.getItem('token'))
+      }else{
+        commit('setToken', null)
+      }
+    },
+    cerrarSesion({ commit }) {
+      localStorage.removeItem('token')
+      localStorage.removeItem('data')
+      commit('setToken',null)
+      commit('setData',{})
     }
 };
 

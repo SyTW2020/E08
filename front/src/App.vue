@@ -14,9 +14,16 @@
 <script>
 import Footer from "@/components/Footer.vue";
 import Header from "./components/Header.vue";
+import {mapActions} from 'vuex'
 
 export default {
   components: { Header, Footer, },
+methods :{
+  ...mapActions("readToken")
+},
+created(){
+this.readToken()
+}
 };
 </script>
 
