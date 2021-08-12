@@ -22,7 +22,7 @@ methods :{
   ...mapActions("readToken")
 },
 created(){
-this.readToken()
+  this.readToken()
 }
 };
 </script>
