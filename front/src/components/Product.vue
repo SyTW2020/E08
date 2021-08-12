@@ -1,46 +1,33 @@
 <template>
   <!--<div class="product" v-on:mouseover="mouseOn" v-on:mouseleave="mouseLeave">-->
+ <div class="productos">
+    <div :key = "product.id" v-for="product in allProducts">
+      
   <div class="card">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <img class="img" src="https://www.asrock.com/mb/photo/Z490%20Pro4(M1).png">
-    <span class="name"> Z490-A Pro </span>
-    <span class="price"> 125€ </span>
+    <img class="img" :src="product.imgUrl">
+    <span class="name"> {{product.name}} </span>
+    <span class="price"> {{product.precio}} </span>
     <div class="hover flex justify-evenly items-center w-full ">
       <button class="button w-3/12 bg-blue-500" ><i class="fa fa-shopping-cart"></i></button>
       <button class="button w-7/12 bg-red-500"> Detalles </button>
     </div>
+
   </div>
+
+    </div>
+  </div> 
 
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
   export default {
     name: 'Product',
-    prop: {
-      name: {
-        type: String,
-        default:'No name',
-        required: true,
-      },
-      price: {
-        type: String, 
-        default: 'NaN',
-        required: true,
-      },
-      url: {
-        type: String,
-        default: '',
-        required: true,
-      }
-    },
-    data() {
-      return {
-        /* prod_img: this.prod_img,*/
-        /* prod_name: this.name, */
-        /* prod_price: this.price, */
-      }
-    },
+    prop: ["producto"],
     methods: {
+      ...mapActions (['obtenerProductos']),
       mouseOn(event) {
         /*alert('Opening ... Its a joke');*/
         event.target.style.transform = "scale(2)";
@@ -48,7 +35,11 @@
       mouseLeave(event) {
         event.target.style.transform = "scale(1)";
       },
-    }
+    },
+    computed: mapGetters(['allProducts']),
+  created(){
+    this.obtenerProductos()
+  }
   };
 </script>
 

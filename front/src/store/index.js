@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import log from './login.module'
+import productos from './productos.module'
 
 
 Vue.use(Vuex);
@@ -8,7 +9,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
 
   modules: {
-    log
+    log,
+    productos
   }
 })
 

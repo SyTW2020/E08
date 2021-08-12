@@ -1,6 +1,9 @@
 <template>
   <div class="home">
-    <Product></Product>
+    
+    <div >
+    <Product   />
+    </div>
 
   </div>
 </template>
@@ -10,10 +13,12 @@
 
 import Product from "@/components/Product.vue";
 
+
 export default {
   name: "Home",
   components: {
     Product
   },
+   
 };
 </script>
