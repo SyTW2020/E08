@@ -9,7 +9,7 @@
         <div class="w-full lg:w-1/2 bg-white p-4 rounded-lg lg:rounded-l-none">
           <img class="mx-auto h-20" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Logo"/>
           <h2 class="mt-3 text-center text-3xl font-bold text-gray-900"> Registro </h2>
-          <form @submit.prevent="registro(registro_datos)" method="POST" class="mt-8 space-y-6">
+          <form @submit.prevent="signup(registro_datos)" method="POST" class="mt-8 space-y-6">
             <div>
               <p class="text-gray-400 italic mb-3">
                 <i class="fa fa-info-circle" style="font-size: 1em"/>
@@ -53,7 +53,7 @@
             </div>
 
             <div>
-              <labek class="block text-gray-700 text-base font-bold mb-2" for="password">Contraseña</labek>
+              <label class="block text-gray-700 text-base font-bold mb-2" for="password">Contraseña</label>
               <!--<div class="rounded shadow -space-y-px">-->
                 <input type="password" name="password" id="password" required placeholder="***********" v-model="registro_datos.password" class="shadow appearance-none border rounded py-2 px-3 w-full text-gray-700 leading-tight focus:outline-none">
               <!--</div>-->
@@ -116,7 +116,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(['registro']),
+    ...mapActions(['signup']),
   }
 }
 </script>

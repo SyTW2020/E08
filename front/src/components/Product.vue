@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <img class="img" :src="product.imgUrl">
     <span class="name"> {{product.name}} </span>
-    <span class="price"> {{product.precio}} </span>
+    <span class="price"> {{product.precio | currency }} </span>
     <div class="hover flex justify-evenly items-center w-full ">
       <button class="button w-3/12 bg-blue-500" ><i class="fa fa-shopping-cart"></i></button>
       <button class="button w-7/12 bg-red-500"> Detalles </button>

@@ -8,8 +8,8 @@ const state = {
 }
 
 const actions = {
-    async registro({commit},registro) {
-       
+    async signup({commit},registro) {
+       console.log("casita")
         const res = await axios.post(url, registro);
         console.log(res)
        

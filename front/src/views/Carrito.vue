@@ -1,12 +1,17 @@
 <template>
-  <Productos-carrito>
+  <div class="Carrito">
+      <Productos_carrito />
+  </div>
 </template>
 
 <script>
-import Productos_carrito from '../components/Productos_carrito.vue'
+import Productos_carrito from "@/components/Productos_carrito.vue"
+
 export default {
-  components: { Productos_carrito },
     name: 'Carrito',
+    components: {
+        Productos_carrito
+    }
 
 }
 </script>

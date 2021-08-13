@@ -1,11 +1,11 @@
 <template>
-  <p>Carrito de la compra</p>
+  <div class="cart">
+    <h1 class="title">Carrito</h1> 
+  </div>
 </template>
-
 <script>
-export default {
-name: 'Productos_carrito',
 
+export default {
+  name: 'Productos_carrito',
 }
 </script>
-
