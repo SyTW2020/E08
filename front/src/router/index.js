@@ -41,6 +41,11 @@ const routes = [
     name: "Carrito",
     component: Carrito,
   },
+  {
+    path: "/perfil",
+    name: "Profile",
+    component: Profile,
+  },
  
 ];
 
