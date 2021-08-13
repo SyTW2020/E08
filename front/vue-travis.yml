@@ -6,7 +6,7 @@ sudo: false
 
 branches:
   only:
-  - main
+  - david-front
 
 cache:
   directories:
@@ -24,4 +24,5 @@ deploy:
   github_token: $GITHUB_TOKEN
   local_dir: dist/my-awesome-project
   on:
-    branch: main
+    branch: david-front
+
