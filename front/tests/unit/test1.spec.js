@@ -1,4 +1,4 @@
-import Login_component from "@/components/Login_component";
+import Rgister from "@/components/Register";
 
 
 describe('Prueba 1', ()=>{

@@ -1,7 +1,7 @@
 import Login_component from "@/components/Login_component";
 
 
-describe('Prueba 1', ()=>{
+describe('Prueba 2', ()=>{
     it('should create', ()=>{
         expect(Login_component.data()).toStrictEqual({
             "usuario": {
