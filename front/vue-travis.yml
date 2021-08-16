@@ -1,8 +1,10 @@
+os: linux
+
 language: node_js
 node_js:
-  - "9"
-dist: trusty
-sudo: false
+  - stable
+dist: xenial
+
 
 branches:
   only:
@@ -16,12 +18,12 @@ install:
   - npm install -g yarn
 
 script:
-  - yarn lint
-  - yarn build --base-href https://[ your github username ].github.io/my-awesome-project/
+  - npm install -g @vue/cli
+  - npm install
+  - npm run test:unit
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: dist/my-awesome-project
   on:
     branch: main
