@@ -1,26 +1,25 @@
 import { shallowMount, mount } from "@vue/test-utils";
 import Login from "@/components/Login_component";
-import Register from "@/components/Register";
+import Register from "@/components/Register_component";
 
 
 describe('Prueba 2', () => {
     let wrapper;
     beforeEach(() => {
         wrapper = shallowMount(Register, {
-            methods: { registrar: () => { } },
+            methods: { signup: () => { } },
             data() {
                 return {
-                    form: {
-                        user: "",
-                        email: "",
-                        pass: "",
+                    registro_datos: {
+                        username: "",
                         nombre: "",
-                        apellidos: "",
-                        numero: "",
+                        apellido: "",
+                        email: "",
+                        password: "",
                         address: "",
-                        poblacion: "",
-                        codigo: "",
-                        cumple: "",
+                        numero: null,
+                        poblacio: "",
+                        codigo: null
                     }
                 };
             }
@@ -39,8 +38,8 @@ describe('Prueba 3', () => {
             data() {
                 return {
                     usuario: {
-                        email: 'yoquese2@gmail.com',
-                        password: 'potasio123'
+                        email: 'prueba9@gmail.com',
+                        password: 'prueba9'
                     }
                 }
             }
