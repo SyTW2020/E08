@@ -53,7 +53,7 @@
             </div>
 
             <div>
-              <labek class="block text-gray-700 text-base font-bold mb-2" for="password">Contraseña</labek>
+              <label class="block text-gray-700 text-base font-bold mb-2" for="password">Contraseña</label>
               <!--<div class="rounded shadow -space-y-px">-->
                 <input type="password" name="password" id="password" required placeholder="***********" class="shadow appearance-none border rounded py-2 px-3 w-full text-gray-700 leading-tight focus:outline-none">
               <!--</div>-->
