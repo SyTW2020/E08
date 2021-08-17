@@ -1,0 +1,30 @@
+os: linux
+
+language: node_js
+node_js:
+  - stable
+dist: xenial
+
+
+branches:
+  only:
+  - david-front
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install -g yarn
+
+script:
+  - npm install -g @vue/cli
+  - npm install
+  - npm run test:unit
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: david-front
+

@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <Login_component></Login_component>
+    <Profile_component></Profile_component>
   </div>
 </template>
 
@@ -14,5 +14,3 @@ export default {
   },
 };
 </script>
-
-<style></style>

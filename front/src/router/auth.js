@@ -7,6 +7,9 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const Joi = require('@hapi/joi');
+
+require('dotenv').config()
+
 const schemaRegister = Joi.object({
     name: Joi.string().min(3).max(255).required(),
     email: Joi.string().min(6).max(1024).required().email(),
@@ -34,6 +37,8 @@ router.post('/login', async (req, res) =>{
     const pass = await bcrypt.compare(req.body.password, user.password)
     if(!pass) return res.status(400).json({error: true, mensaje: 'contraseña mal'})
 
+    //var sec  = process.env.TOKEN_SECRET; 
+
     //crear token
     const token = jwt.sign({
         name: user.name,
@@ -42,7 +47,6 @@ router.post('/login', async (req, res) =>{
 
     res.json({
         error: null,
-        mensaje: 'Hey',
         token: token
     })
 
