@@ -23,29 +23,33 @@
         <div class="flex space-x-3">
           <button class="bg-white py-2 px-3 rounded"><i class="fa fa-shopping-cart mr-2" style="font-size: 1.2em"></i>Carrito</button>
           <button v-if="logged" class="gradient font-bold text-white py-2 px-3 rounded">INICIADO!</button>
-          <button v-else class="gradient font-bold text-white py-2 px-3 rounded">Iniciar sesión</button>
+          <div v-else class="flex">
+            <router-link to="/Login" class="gradient font-bold text-white py-2 px-3 rounded">Iniciar sesión</router-link>
+            
+          </div>
         </div>
-
       </div>
     </div>
   </nav>
 </template>
 
 <script>
+
 export default {
+
   name: "Header",
   prop: {
       logged: {
         type: Boolean,
-        default:false,
+        default: false,
         required: true,
-      }
+      },
   },
   data() {
     return {
-      logged: false
+      logged: false,
     };
-  }
+  }, 
 }
 </script>
 

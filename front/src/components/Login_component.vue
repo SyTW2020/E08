@@ -1,8 +1,9 @@
 
 
 <template>
-  <div class="flex items-center justify-center mt-10">
-    <div class="w-full max-w-xs space-y-8">
+  <div class="relative size_login flex items-center justify-center mt-10">
+    <div class="absolute login_img flex items-center justify-center w-2/3 max-w-6xl h-full rounded-lg shadow"></div>
+    <div class="w-full max-w-md space-y-8 border shadow rounded bg-white px-4 py-4 z-10">
       <div>
         <img class="mx-auto h-20" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Logo"/>
         <h2 class="mt-6 text-center text-3xl font-bold text-gray-900"> Iniciar sesión </h2>
@@ -39,7 +40,7 @@
       <div>
         <div class="flex relative justify-center mt-16 border-t-2 border-gray-300">
           <div class="flex justify-center absolute -top-3.5 w-3/5  bg-white">
-            <span> ¿Aun no tienes cuenta? </span>
+            <span> ¿Aún no tienes cuenta? </span>
           </div>
         </div>
       </div>
@@ -47,6 +48,7 @@
           <router-link to="/registro" class="w-full py-2 px-4 text-center border text-base bg-gray-100 group hover:bg-gray-200 border-transparent font-medium rounded-md text-black  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400 transition duration-300">Crear cuenta</router-link>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -59,8 +61,8 @@ export default {
   data(){
   return{
     usuario: {
-        email: 'prueba9@gmail.com',
-        password: 'prueba9'
+        email: 'prueba12@gmail.com',
+        password: 'prueba12'
       }
     }
   },
@@ -71,5 +73,18 @@ export default {
 </script>
 
 
-<style></style>
+<style scoped>
+  .login_img {
+    background-image: url("../assets/login_wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /*opacity: 0.5;*/
+  }
+
+  .size_login {
+    height: 50rem;
+  }
+  
+</style>
 

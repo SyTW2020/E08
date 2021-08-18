@@ -120,17 +120,15 @@ export default {
   }
 }
 </script>
-}
-<style>
 
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+<style scoped>
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
 
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
 </style>

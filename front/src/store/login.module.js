@@ -4,7 +4,7 @@ const url = 'http://localhost:4000/auth/signin'
 
 const state = {
     token: null,
-    data: {},
+    datos: {},
 }
 
 const actions = {
@@ -13,10 +13,10 @@ const actions = {
         const res = await axios.post(url, usuario);
         console.log(res)
        
-        commit('setToken', res.data.token)
         commit('setData', res.data.datos)
+        commit('setToken', res.data.token)
         localStorage.setItem('token', res.data.token)
-        localStorage.setItem('data', res.data.datos)
+        localStorage.setItem('datos', res.data.datos)
     }, 
     readToken({ commit }) {
       if(localStorage.getItem('token')){
@@ -27,7 +27,7 @@ const actions = {
     },
     cerrarSesion({ commit }) {
       localStorage.removeItem('token')
-      localStorage.removeItem('data')
+      localStorage.removeItem('datos')
       commit('setToken',null)
       commit('setData',{})
     }
@@ -38,9 +38,11 @@ const mutations = {
       state.token=payload
     },
     setData(state,payload){
-      state.data=payload
+      state.datos=payload
     },
     };
-  const getters = {}
+  const getters = { 
+    allData : state => state.datos
+  }
 
 export default {state, getters, actions, mutations}

@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Registro from "../views/Registro.vue";
 import Login from "../views/Login.vue";
 import Carrito from "../views/Carrito.vue";
+import Profile from "../views/Profile.vue";
 import store from "../store/index"
 
 
@@ -41,7 +42,12 @@ const routes = [
     name: "Carrito",
     component: Carrito,
   },
+  {
  
+    path: "/profile",
+    name:"profile",
+    component: Profile,
+  },
 ];
 
 const router = new VueRouter({
