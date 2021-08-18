@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Registro from "../views/Registro.vue";
 import Login from "../views/Login.vue";
 import Carrito from "../views/Carrito.vue";
+import Detalles from "../views/Detalles.vue";
 import store from "../store/index"
 
 
@@ -40,6 +41,11 @@ const routes = [
     path: "/carrito",
     name: "Carrito",
     component: Carrito,
+  },
+  {
+    path: "/detalles",
+    name: "Detalles",
+    component: Detalles,
   },
  
 ];
