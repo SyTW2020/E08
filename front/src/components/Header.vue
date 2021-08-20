@@ -4,7 +4,10 @@
     <div class="px-8 py-3 mx-auto border-1 bg-gray-200 shadow-sm">
       <div class="flex justify-between items-center">
         <!-- LOGO -->
-        <div class="mr-20">Logo</div>
+        <div class="mr-20">
+          Logo
+          <!--<img src="@/assets/logo_web.png" alt="" sizes="50%" srcset=""> -->
+        </div>
 
         <!-- Search -->
         <div class="absolute inset-x-0 m-auto w-3/12">
@@ -58,6 +61,10 @@ export default {
     position: relative;
     background-image: linear-gradient(to right,hsl(177, 47%, 39%),hsl(279, 38%, 40%));
     z-index: 1;
+  }
+
+  .logo{
+    size: 20%;
   }
 
   .gradient::before {
