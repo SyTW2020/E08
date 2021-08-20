@@ -25,6 +25,7 @@ const actions = {
       },
       cerrarSesion({ commit }) {
         localStorage.removeItem('token')
+        localStorage.removeItem('usuario')
         commit('setToken',null)
       }
           
