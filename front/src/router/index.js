@@ -4,7 +4,11 @@ import Home from "../views/Home.vue";
 import Registro from "../views/Registro.vue";
 import Login from "../views/Login.vue";
 import Carrito from "../views/Carrito.vue";
+<<<<<<< HEAD
 import Profile from "../views/Profile.vue";
+=======
+import Detalles from "../views/Detalles.vue";
+>>>>>>> detalles
 import store from "../store/index"
 
 
@@ -43,7 +47,11 @@ const routes = [
     component: Carrito,
   },
   {
- 
+    path: "/detalles",
+    name: "Detalles",
+    component: Detalles,
+  },
+  {
     path: "/profile",
     name:"profile",
     component: Profile,
