@@ -37,16 +37,8 @@ export const signup = async (req, res) => {
      const token = jwt.sign({id:saveUser._id}, config.SECRET,{
           expiresIn: 1800 // 30 min
      })
-     const data = {
-          username,
-          email,
-          nombre,
-          apellido,
-          numero,
-          poblacion,
-          address,
-          codigo}
-     return res.json({token,data})
+   
+     return res.json(token)
 }
 
 export const signin = async (req, res) => {
@@ -60,7 +52,16 @@ export const signin = async (req, res) => {
     const token = jwt.sign({id: userFound._id}, config.SECRET,{
           expiresIn : 1800
      })
-     const data = {
+   
+     res.json(token)
+
+}
+
+export const dataProfile = async (req,res) => {
+     const userFound = await User.findOne({email: req.body.email}).populate("roles")
+     if(!userFound) return res.status(400).json({message: "Usuario no encontrado"})
+
+     const datos = {
           "username" : userFound.username,
           "email" : userFound.email,
           "nombre" : userFound.nombre,
@@ -70,6 +71,5 @@ export const signin = async (req, res) => {
           "address" : userFound.address,
           "codigo" : userFound.codigo
      }
-     res.json({token,data})
-
+     res.json(datos)
 }

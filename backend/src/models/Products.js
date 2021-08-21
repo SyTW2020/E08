@@ -5,6 +5,7 @@ const ProducSchema = new Schema({
     categoria: String,
     precio: Number,
     stock : Number,
+    descripcion: String,
     imgUrl : String
 },
 {
