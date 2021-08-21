@@ -1,15 +1,15 @@
-
 const state = {
     topRated: [{id: 1, name: 'Tele', price: 500, url:'aqui va el enlace a la foto', desc: "Buena tele", rate: 4.3 }, 
     {id: 2, name: 'Cascos', price: 50, url:'aqui va el enlace a la foto', desc: "Buen casco", rate: 4.0 },
     {id: 3, name: 'PC', price: 900, url:'aqui va el enlace a la foto', desc: "Buena pc", rate: 3.9 }],
 
     carrito_productos_contador: 0,
-    carrito_productos: []
+    carrito_products: []
     
 }
 
 const mutations = {
+    
     addToCart(state, payload){
     let item = payload;
     item = { ...item, quantity: 1 }
@@ -25,6 +25,7 @@ const mutations = {
         state.carrito_products.push(item)
     }
     state.carrito_productos_contador++
+    console.log(state.carrito_productos_contador)
 },
 
     removeItem(state, payload){
@@ -61,7 +62,9 @@ const actions = {
 
 
 
-const getters = {}
+const getters = {
+    contador: state => state.carrito_productos_contador
+}
 
 
 

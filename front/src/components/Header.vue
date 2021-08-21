@@ -5,8 +5,7 @@
       <div class="flex justify-between items-center">
         <!-- LOGO -->
         <div class="mr-20">
-          Logo
-          <!--<img src="@/assets/logo_web.png" alt="" sizes="50%" srcset=""> -->
+          <img src="@/assets/logo_web.png" alt="" style="width:110px;height:60px;">
         </div>
 
         <!-- Search -->
@@ -24,7 +23,12 @@
 
         <!-- Botones -->
         <div class="flex space-x-3">
-          <button class="bg-white py-2 px-3 rounded"><i class="fa fa-shopping-cart mr-2" style="font-size: 1.2em"></i>Carrito</button>
+
+           <!-- ESTOY PROBANDO COSAS 
+          <button onclick="window.location.href='/Carrito'" class="bg-white py-2 px-3 rounded"><i class="fa fa-shopping-cart mr-2" style="font-size: 1.2em"></i>Carrito</button>
+          -->
+            <i class="fa fa-shopping-cart cart-icon"></i>
+            <p class="cart-count"> {{ contador }} </p>
           <button v-if="logged" class="gradient font-bold text-white py-2 px-3 rounded">INICIADO!</button>
           <div v-else class="flex">
             <router-link to="/Login" class="gradient font-bold text-white py-2 px-3 rounded">Iniciar sesión</router-link>
@@ -36,11 +40,15 @@
   </nav>
 </template>
 
+
 <script>
-
+import {mapGetters} from "vuex"
 export default {
-
   name: "Header",
+  computed: {
+    ...mapGetters(["contador"])
+  },
+
   prop: {
       logged: {
         type: Boolean,
@@ -53,7 +61,7 @@ export default {
       logged: false,
     };
   }, 
-}
+};
 </script>
 
 <style scoped>
@@ -66,6 +74,26 @@ export default {
   .logo{
     size: 20%;
   }
+
+  .cart {
+    width: 300px; justify-content: space-evenly; padding-top: 3px;
+  }
+
+  .cart-icon{
+    line-height: 45px;
+    font-size: 25px;
+    color: black;
+    cursor: pointer;
+  }
+
+    .cart-count {
+    font-size: 15px;
+    color: blue;
+    background: white;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
 
   .gradient::before {
     position: absolute;

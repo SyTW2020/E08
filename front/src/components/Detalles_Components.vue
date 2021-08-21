@@ -91,7 +91,7 @@
       <b-button variant="primary" class="mr-1 mb-2 ">
         COMPRAR YA <b-icon icon="credit-card" aria-hidden="true"></b-icon>
       </b-button>
-      <b-button variant="outline-info" class="mr-1 mb-2 ">
+      <b-button v-on:click="addToCart" variant="outline-info" class="mr-1 mb-2 ">
         <b-icon icon="cart4" aria-hidden="true"></b-icon> ADD TO CART
       </b-button>
     </div>
@@ -104,7 +104,20 @@
 
 <script>
 export default {
-name: "Detalles_Components"
+name: "Detalles_Components",
+methods: {
+  addToCart() {
+//    this.$store.commit("addToCart")
+    this.$store.dispatch("addToCart", this.details);
+
+},
+
+removeItem() {
+//    this.$store.commit("removeItem")
+    this.$store.dispatch("removeItem", this.details);
+
+}
+}
 }
 </script>
 
