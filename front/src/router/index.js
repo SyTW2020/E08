@@ -44,7 +44,7 @@ const routes = [
     component: Carrito,
   },
   {
-    path: "/detalles",
+    path: "/detalles/:id",
     name: "Detalles",
     component: Detalles,
   },

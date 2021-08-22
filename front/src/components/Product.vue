@@ -10,7 +10,7 @@
     <span class="price"> {{product.precio}} </span>
     <div class="hover flex flex-col space-y-6 justify-center items-center w-full">
       <button class="button w-7/12 text-base bg-green-600 rounded border-black text-white hover:bg-green-700 " ><i class="fa fa-cart-plus"></i> Comprar </button>
-      <button class="button w-7/12 text-base bg-gray-100 rounded  text-black hover:bg-gray-300"><i class="fa fa-info-circle"></i> Detalles </button>
+      <button class="button w-7/12 text-base bg-gray-100 rounded  text-black hover:bg-gray-300"><i class="fa fa-info-circle"></i><router-link :to = '`/detalles/${product._id}`'> Detalles</router-link> </button>
     </div>
   </div>
     </div>

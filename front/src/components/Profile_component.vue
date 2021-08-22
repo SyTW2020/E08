@@ -76,7 +76,6 @@ methods: {
   ...mapActions(['datosUser'])
 },
 mounted(){
-  console.log("Llamando datos user")
   this.datosUser()
 }
 
