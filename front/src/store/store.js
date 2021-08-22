@@ -63,7 +63,9 @@ const actions = {
 
 
 const getters = {
-    contador: state => state.carrito_productos_contador
+    contador: state => state.carrito_productos_contador,
+    array_productos: state => state.carrito_products
+
 }
 
 

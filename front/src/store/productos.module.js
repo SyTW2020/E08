@@ -4,7 +4,6 @@ const url ='http://localhost:4000/products'
 
 const state = {
     products: [],
-    carrito_products : [],
     detalles : {}
 }
 

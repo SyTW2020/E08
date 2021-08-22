@@ -27,7 +27,10 @@
            <!-- ESTOY PROBANDO COSAS 
           <button onclick="window.location.href='/Carrito'" class="bg-white py-2 px-3 rounded"><i class="fa fa-shopping-cart mr-2" style="font-size: 1.2em"></i>Carrito</button>
           -->
+          <router-link to="/carrito">
             <i class="fa fa-shopping-cart cart-icon"></i>
+          </router-link>
+              
             <p class="cart-count"> {{ contador }} </p>
           <button v-if="logged" class="gradient font-bold text-white py-2 px-3 rounded">INICIADO!</button>
           <div v-else class="flex">
