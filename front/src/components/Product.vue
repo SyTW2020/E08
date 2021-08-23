@@ -9,7 +9,7 @@
     <span class="name"> {{product.name}} </span>
     <span class="price"> {{product.precio}} </span>
     <div class="hover flex flex-col space-y-6 justify-center items-center w-full">
-      <button class="button w-7/12 text-base bg-green-600 rounded border-black text-white hover:bg-green-700 " ><i class="fa fa-cart-plus"></i> Comprar </button>
+      <button v-on:click="addToCart(product)" class="button w-7/12 text-base bg-green-600 rounded border-black text-white hover:bg-green-700 " ><i class="fa fa-cart-plus"></i> Comprar </button>
       <button class="button w-7/12 text-base bg-gray-100 rounded  text-black hover:bg-gray-300"><i class="fa fa-info-circle"></i><router-link :to = '`/detalles/${product._id}`'> Detalles</router-link> </button>
     </div>
   </div>
@@ -34,6 +34,12 @@ import { mapGetters, mapActions } from 'vuex';
       mouseLeave(event) {
         event.target.style.transform = "scale(1)";
       },
+
+      addToCart(product) {
+//    this.$store.commit("addToCart")
+        this.$store.dispatch("addToCart", product);
+      
+}
     },
     computed: mapGetters(['allProducts']),
   created(){
