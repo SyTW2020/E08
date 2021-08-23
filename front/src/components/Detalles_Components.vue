@@ -31,7 +31,7 @@
       <p class="pt-1">{{detallesProductos.descripcion}}</p>
 
       <hr>
-      <b-button v-on:click="addToCart" variant="outline-info" class="mr-1 mb-2 ">
+      <b-button v-on:click="addToCart(detallesProductos)" variant="outline-info" class="mr-1 mb-2 ">
         <b-icon icon="cart4" aria-hidden="true"></b-icon> ADD TO CART
       </b-button>
     </div>
@@ -51,9 +51,9 @@ computed: {
   ...mapGetters(['detallesProductos'])
 },
 methods: {
-  addToCart() {
+  addToCart(detallesProductos) {
 //    this.$store.commit("addToCart")
-    this.$store.dispatch("addToCart", this.details);
+    this.$store.dispatch("addToCart", detallesProductos);
 
 },
 

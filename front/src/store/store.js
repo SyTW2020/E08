@@ -4,14 +4,13 @@ const state = {
     {id: 3, name: 'PC', price: 900, url:'aqui va el enlace a la foto', desc: "Buena pc", rate: 3.9 }],
 
     contador_productos: 0,
-    products: [],
-    carrito: {}
+    products: []
 
     
 }
 
 const mutations = {
-    
+   
     addToCart(state, payload){
     let item = payload;
     item = { ...item, quantity: 1 }
@@ -60,15 +59,15 @@ const mutations = {
 }
 
 
-/*
 
+/*
     addToCart(state, payload){
     let item = payload;
     item = { ...item, quantity: 1 }
     if(state.products > 0){
-        let bool = state.products.some(i => i.id == item.id)
+        let bool = state.products.some(i => i._id === item._id)
         if (bool){
-            let itemIndex = state.products.findIndex(el => el.id === item.id)
+            let itemIndex = state.products.findIndex(el => el._id === item._id)
             state.products[itemIndex]["quantity"] +=1;
         } else {
             state.products.push(item)
@@ -82,22 +81,22 @@ const mutations = {
 
     removeItem(state, payload){
         if(state.products.length > 0){
-            let bool = state.carrito_productos.some (i => i.id === payload.id)
+            let bool = state.products.some (i => i._id === payload._id)
             
             if (bool) {
-                let index = state.carrito_productos.findIndex(el => el.id === payload.id)
-                if (state.carrito_productos[index]["quantity"] !== 0){
-                    state.carrito_productos[index]["quantity"] -= 1
+                let index = state.products.findIndex(el => el._id === payload._id)
+                if (state.products[index]["quantity"] !== 0){
+                    state.products[index]["quantity"] -= 1
                     state.contador_productos--
                 }
-                if (state.carrito_productos[index]["quantity"] === 0){
-                    state.carrito_productos.splice(index, 1)
+                if (state.products[index]["quantity"] === 0){
+                    state.products.splice(index, 1)
                 }
             }
         }
     }
-
 */
+
 
 
 
