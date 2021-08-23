@@ -88,9 +88,8 @@ removeItem(item) {
 Checkout(){
 
     swal ("Enhorabuena", "Su pedido se ha realizado con éxito", "Muchas gracias por su compra").then(
-            window.location.href = "/carrito"        
+        window.location.href = "/carrito"        
     );
-
 },
 
 
