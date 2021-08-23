@@ -35,7 +35,8 @@ const mutations = {
     setToken(state,payload){
       state.token=payload
     },
-    };
+    }
+    
   const getters = {}
 
 export default {state, getters, actions, mutations}
