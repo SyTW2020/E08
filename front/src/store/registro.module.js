@@ -4,7 +4,7 @@ const url = 'http://localhost:4000/auth/signup'
 
 const state = {
     token: null,
-    data: {},
+ 
 }
 
 const actions = {
