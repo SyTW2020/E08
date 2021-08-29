@@ -1,16 +1,19 @@
 <template>
-  <!--<div class="product" v-on:mouseover="mouseOn" v-on:mouseleave="mouseLeave">-->
- <div class="productos flex" >
+ <div class="productos flex space-x-4" >
     <div :key = "product.id" v-for="product in allProducts">
       
-  <div class="card shadow-sm">
+  <div class="card shadow-sm pt-3 items-center">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <img class="img" :src="product.imgUrl">
-    <span class="name"> {{product.name}} </span>
-    <span class="price"> {{product.precio}} </span>
+    <div class="flex h-4/6 w-full justify-center">
+      <img class="img object-scale-down" :src="product.imgUrl">
+    </div>
+    <div class="flex flex-col w-11/12">
+      <span class="text-md text-gray-500 truncate"> {{product.name}} </span>
+      <span class="text-2xl font-semibold"> {{product.precio}} </span>
+    </div>
     <div class="hover flex flex-col space-y-6 justify-center items-center w-full">
-      <button class="button w-7/12 text-base bg-green-600 rounded border-black text-white hover:bg-green-700 " ><i class="fa fa-cart-plus"></i> Comprar </button>
-      <button class="button w-7/12 text-base bg-gray-100 rounded  text-black hover:bg-gray-300"><i class="fa fa-info-circle"></i> Detalles </button>
+      <button class="button w-7/12 h-7 text-base bg-green-600 rounded border-black text-white hover:bg-green-700 " ><i class="fa fa-cart-plus"></i> Comprar </button>
+      <button class="button w-7/12 h-7 text-base bg-gray-100 rounded  text-black hover:bg-gray-300"><i class="fa fa-info-circle"></i> Detalles </button>
     </div>
   </div>
     </div>
@@ -27,13 +30,6 @@ import { mapGetters, mapActions } from 'vuex';
     prop: ["producto"],
     methods: {
       ...mapActions (['obtenerProductos']),
-      mouseOn(event) {
-        /*alert('Opening ... Its a joke');*/
-        event.target.style.transform = "scale(2)";
-      },
-      mouseLeave(event) {
-        event.target.style.transform = "scale(1)";
-      },
     },
     computed: mapGetters(['allProducts']),
   created(){
@@ -44,14 +40,15 @@ import { mapGetters, mapActions } from 'vuex';
 
 <style>
   .img {
-    max-width: 100%;
+    max-width: 95%;
+    max-height: 95%;
   }
 
   .card {
     margin: auto;
     margin-bottom: 1vh;
-    height: 14rem;
-    width:  11rem;
+    height: 17rem;
+    width:  13rem;
     background-color: #FFFFFF;
 
     text-align: center;

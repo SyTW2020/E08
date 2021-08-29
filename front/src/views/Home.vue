@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
+  <div class="home flex justify-center ">
     
-    <div >
+    <div>
     <Product   />
     </div>
 
