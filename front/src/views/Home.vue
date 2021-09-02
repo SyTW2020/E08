@@ -1,9 +1,8 @@
 <template>
-  <div class="home flex justify-center ">
-    
-    <div>
-    <Product   />
-    </div>
+  <div class="home">
+    <div class="flex justify-center">
+      <Product/>
+    </div>  
 
   </div>
 </template>
@@ -17,7 +16,7 @@ import Product from "@/components/Product.vue";
 export default {
   name: "Home",
   components: {
-    Product
+    Product,
   },
    
 };
