@@ -53,7 +53,6 @@ const routes = [
     path: "/profile",
     name:"profile",
     component: Profile,
-    meta: {requiresAuth: true}
   },
 ];
 
@@ -65,10 +64,10 @@ const router = new VueRouter({
 
 
 
-/* eslint-disable */
+
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
-    if (store.state.auth) {
+    if (store.state.token) {
       next();
     } else {
       next('/login');
@@ -77,6 +76,6 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
-  /* eslint-enable */
+ 
 
 export default router;

@@ -45,7 +45,7 @@
                 Mi cuenta
               </a>
               
-              <a href="#" class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-red-500 hover:text-white">
+              <a href="#" v-on:click="cerrarSesion()" class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-red-500 hover:text-white">
                 Cerrar sesión
               </a>
             </div>
@@ -75,7 +75,8 @@ export default {
       }, */
   },
   methods: {
-    ...mapActions(['datosUser']),
+    ...mapActions(['datosUser','cerrarSesion']),
+    
  
     randomColor() {
       var h = Math.floor(Math.random()*360);
