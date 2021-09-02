@@ -5,7 +5,7 @@
     <div class="absolute login_img flex items-center justify-center w-2/3 max-w-6xl h-full rounded-lg shadow"></div>
     <div class="w-full max-w-md space-y-8 border shadow rounded bg-white px-4 py-4 z-10">
       <div>
-        <img class="mx-auto h-20" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Logo"/>
+        <img class="mx-auto w-3/12" src="@/assets/simple_logo.png" alt="Logo"/>
         <h2 class="mt-6 text-center text-3xl font-bold text-gray-900"> Iniciar sesión </h2>
         <!--<p class="mt-2 text-xl text-center">O {{''}}
           <a href="/registro" class="text-green-500 font-bold">Crea una cuenta</a>

@@ -22,8 +22,8 @@
 
         <div class="w-full lg:w-1/2 bg-white p-4 rounded-lg lg:rounded-l-none">
           <img
-            class="mx-auto h-20"
-            src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+            class="mx-auto h-24"
+            src="@/assets/simple_logo.png"
             alt="Logo"
           />
           <h2 class="mt-3 text-center text-3xl font-bold text-gray-900">
