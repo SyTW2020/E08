@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "babel src --out-dir build",
+    "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:unit:watch": "vue-cli-service test:unit --watchAll",
     "dev": "nodemon index.js --exec babel-node",
@@ -58,6 +58,7 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",
     "flush-promises": "^1.0.2",
+    "gh-pages": "^3.2.3",
     "nock": "^13.1.1",
     "nodemon": "^2.0.12",
     "postcss": "^7.0.36",
