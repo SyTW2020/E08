@@ -7,8 +7,7 @@
             w-full
             bg-gray-400
             hidden
-            lg:block
-            lg:w-1/2
+            lg:block lg:w-1/2
             bg-cover
             rounded-l-lg
           "
@@ -21,11 +20,7 @@
         </div>
 
         <div class="w-full lg:w-1/2 bg-white p-4 rounded-lg lg:rounded-l-none">
-          <img
-            class="mx-auto h-24"
-            src="@/assets/simple_logo.png"
-            alt="Logo"
-          />
+          <img class="mx-auto h-24" src="@/assets/simple_logo.png" alt="Logo" />
           <h2 class="mt-3 text-center text-3xl font-bold text-gray-900">
             Registro
           </h2>
@@ -67,7 +62,12 @@
                   focus:outline-none
                 "
               />
-              <div v-if="submited && !$v.registro_datos.username.minLength" class="alert alert-danger">El campo debe tener al menos 3 caracteres</div>
+              <div
+                v-if="submited && !$v.registro_datos.username.minLength"
+                class="alert alert-danger"
+              >
+                El campo debe tener al menos 3 caracteres
+              </div>
               <!--</div>-->
             </div>
 
@@ -99,7 +99,12 @@
                     focus:outline-none
                   "
                 />
-                <div v-if="submited && !$v.registro_datos.nombre.minLength" class="alert alert-danger">El campo debe tener al menos 3 caracteres</div>
+                <div
+                  v-if="submited && !$v.registro_datos.nombre.minLength"
+                  class="alert alert-danger"
+                >
+                  El campo debe tener al menos 3 caracteres
+                </div>
                 <!--</div>-->
               </div>
 
@@ -130,7 +135,12 @@
                     focus:outline-none
                   "
                 />
-                <div v-if="submited && !$v.registro_datos.apellido.minLength" class="alert alert-danger">El campo debe tener al menos 3 caracteres</div>
+                <div
+                  v-if="submited && !$v.registro_datos.apellido.minLength"
+                  class="alert alert-danger"
+                >
+                  El campo debe tener al menos 3 caracteres
+                </div>
                 <!--</div>-->
               </div>
             </div>
@@ -162,9 +172,19 @@
                   focus:outline-none
                 "
               />
-              <div v-if="submited && !$v.registro_datos.numero.minLength" class="alert alert-danger">El campo debe tener 9 caracteres</div>
-              <div v-if="submited && !$v.registro_datos.numero.maxLength" class="alert alert-danger">El campo debe tener 9 caracteres</div>
-              
+              <div
+                v-if="submited && !$v.registro_datos.numero.minLength"
+                class="alert alert-danger"
+              >
+                El campo debe tener 9 caracteres
+              </div>
+              <div
+                v-if="submited && !$v.registro_datos.numero.maxLength"
+                class="alert alert-danger"
+              >
+                El campo debe tener 9 caracteres
+              </div>
+
               <!--</div>-->
             </div>
 
@@ -225,7 +245,12 @@
                   focus:outline-none
                 "
               />
-              <div v-if="submited && !$v.registro_datos.password.minLength" class="alert alert-danger">El campo debe tener al menos 3 caracteres</div>
+              <div
+                v-if="submited && !$v.registro_datos.password.minLength"
+                class="alert alert-danger"
+              >
+                El campo debe tener al menos 3 caracteres
+              </div>
               <!--</div>-->
             </div>
 
@@ -260,7 +285,12 @@
                   focus:outline-none
                 "
               />
-              <div v-if="submited && !$v.registro_datos.address.minLength" class="alert alert-danger">El campo debe tener al menos 3 caracteres</div>
+              <div
+                v-if="submited && !$v.registro_datos.address.minLength"
+                class="alert alert-danger"
+              >
+                El campo debe tener al menos 3 caracteres
+              </div>
             </div>
 
             <div class="flex space-x-2">
@@ -291,7 +321,12 @@
                     focus:outline-none
                   "
                 />
-                <div v-if="submited && !$v.registro_datos.poblacio.minLength" class="alert alert-danger">El campo debe tener al menos 3 caracteres</div>
+                <div
+                  v-if="submited && !$v.registro_datos.poblacio.minLength"
+                  class="alert alert-danger"
+                >
+                  El campo debe tener al menos 3 caracteres
+                </div>
               </div>
 
               <div class="w-1/2">
@@ -321,8 +356,18 @@
                     focus:outline-none
                   "
                 />
-                <div v-if="submited && !$v.registro_datos.codigo.minLength" class="alert alert-danger">El campo debe tener 5 caracteres</div>
-                <div v-if="submited && !$v.registro_datos.codigo.maxLength" class="alert alert-danger">El campo debe tener 5 caracteres</div>
+                <div
+                  v-if="submited && !$v.registro_datos.codigo.minLength"
+                  class="alert alert-danger"
+                >
+                  El campo debe tener 5 caracteres
+                </div>
+                <div
+                  v-if="submited && !$v.registro_datos.codigo.maxLength"
+                  class="alert alert-danger"
+                >
+                  El campo debe tener 5 caracteres
+                </div>
               </div>
             </div>
 
@@ -343,7 +388,9 @@
                   rounded-md
                   text-white
                   focus:outline-none
-                  focus:ring-2 focus:ring-offset-2 focus:ring-green-400
+                  focus:ring-2
+                  focus:ring-offset-2
+                  focus:ring-green-400
                   transition
                   duration-300
                 "
@@ -356,11 +403,16 @@
       </div>
     </div>
   </div>
-</template>  
+</template>
 
 <script>
 import { mapActions } from "vuex";
-import { required, minLength, maxLength, email } from "vuelidate/lib/validators";
+import {
+  required,
+  minLength,
+  maxLength,
+  email,
+} from "vuelidate/lib/validators";
 export default {
   name: "Register",
   data() {
@@ -419,7 +471,6 @@ export default {
         required,
         minLength: minLength(9),
         maxLength: maxLength(9),
-        
       },
       poblacio: {
         required,
@@ -436,13 +487,12 @@ export default {
 </script>
 
 <style scoped>
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
-
-  input[type=number] {
-    -moz-appearance: textfield;
-  }
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 </style>

@@ -1,4 +1,4 @@
-var _asyncToGenerator = require("C:/Users/Usuario/Documents/SErgio Espabila/E08/front/node_modules/@babel/runtime/helpers/asyncToGenerator").default;
+var _asyncToGenerator = require("C:/Users/david/Desktop/Pagina VUE/SyTW/front/node_modules/@babel/runtime/helpers/asyncToGenerator").default;
 
 require("regenerator-runtime/runtime.js");
 
@@ -13,6 +13,8 @@ var bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 
 var Joi = require('@hapi/joi');
+
+require('dotenv').config();
 
 var schemaRegister = Joi.object({
   name: Joi.string().min(3).max(255).required(),
@@ -84,6 +86,7 @@ router.post('/login', /*#__PURE__*/function () {
             }));
 
           case 13:
+            //var sec  = process.env.TOKEN_SECRET; 
             //crear token
             token = jwt.sign({
               name: user.name,
@@ -91,7 +94,6 @@ router.post('/login', /*#__PURE__*/function () {
             }, process.env.TOKEN_SECRET);
             res.json({
               error: null,
-              mensaje: 'Hey',
               token: token
             });
             res.header('auth-token', token), json({

@@ -1,38 +1,34 @@
 <template>
   <div id="app" class="relative">
-
-    <Header/>
+    <Header />
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/registro">Registro</router-link> |
-      <router-link to="/login">Login</router-link> | 
+      <router-link to="/login">Login</router-link> |
       <router-link to="/profile">Perfil</router-link>
     </div>
     <router-view />
-    <Footer/>
+    <Footer />
   </div>
 </template>
-
 
 <script>
 import Footer from "@/components/Footer.vue";
 import Header from "./components/Header.vue";
 
-
 export default {
-  components: { Header, Footer, },
-
+  components: { Header, Footer },
 };
 </script>
 
 <style>
-  #app {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
+#app {
+  margin: 0 !important;
+  padding: 0 !important;
+}
 
-  .login_bg {
-    background-color: rgba(0, 0, 0, 0.76);
-  }
+.login_bg {
+  background-color: rgba(0, 0, 0, 0.76);
+}
 </style>

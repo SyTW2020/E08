@@ -1,6 +1,6 @@
 <template>
   <div class="profile">
-    <Profile/>
+    <Profile />
   </div>
 </template>
 
@@ -8,10 +8,8 @@
 import Profile from "@/components/Profile_component.vue";
 
 export default {
-  components: { Profile, }
-}
+  components: { Profile },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

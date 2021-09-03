@@ -1,30 +1,23 @@
-"use strict";
-
-var _interopRequireDefault = require("C:/Users/Usuario/Documents/SErgio Espabila/E08/front/node_modules/@babel/runtime/helpers/interopRequireDefault").default;
-
-var _vue = _interopRequireDefault(require("vue"));
-
-var _App = _interopRequireDefault(require("./App.vue"));
-
-var _router = _interopRequireDefault(require("./router"));
-
-var _store = _interopRequireDefault(require("./store"));
-
-var _bootstrapVue = require("bootstrap-vue");
-
-require("bootstrap/dist/css/bootstrap.css");
-
-require("bootstrap-vue/dist/bootstrap-vue.css");
-
-_vue.default.use(_bootstrapVue.BootstrapVue);
-
-_vue.default.use(_bootstrapVue.IconsPlugin);
-
-_vue.default.config.productionTip = false;
-new _vue.default({
-  router: _router.default,
-  store: _store.default,
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
+import axios from 'axios';
+import VueAxios from 'vue-axios';
+import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
+import "./index.css";
+import Vuelidate from 'vuelidate';
+Vue.use(BootstrapVue);
+Vue.use(IconsPlugin);
+Vue.use(VueAxios, axios);
+Vue.use(Vuelidate);
+Vue.config.productionTip = false;
+new Vue({
+  router: router,
+  store: store,
   render: function render(h) {
-    return h(_App.default);
+    return h(App);
   }
 }).$mount("#app");

@@ -1,66 +1,82 @@
 const state = {
-    topRated: [{id: 1, name: 'Tele', price: 500, url:'https://m.media-amazon.com/images/I/81tn5ZRtx7L._AC_SX425_.jpg', desc: "Buena tele", rate: 4.3, quantity: 1}, 
-    {id: 2, name: 'Cascos', price: 50, url:'aqui va el enlace a la foto', desc: "Buen casco", rate: 4.0 },
-    {id: 3, name: 'PC', price: 900, url:'aqui va el enlace a la foto', desc: "Buena pc", rate: 3.9 }],
+  topRated: [
+    {
+      id: 1,
+      name: "Tele",
+      price: 500,
+      url: "https://m.media-amazon.com/images/I/81tn5ZRtx7L._AC_SX425_.jpg",
+      desc: "Buena tele",
+      rate: 4.3,
+      quantity: 1,
+    },
+    {
+      id: 2,
+      name: "Cascos",
+      price: 50,
+      url: "aqui va el enlace a la foto",
+      desc: "Buen casco",
+      rate: 4.0,
+    },
+    {
+      id: 3,
+      name: "PC",
+      price: 900,
+      url: "aqui va el enlace a la foto",
+      desc: "Buena pc",
+      rate: 3.9,
+    },
+  ],
 
-    contador_productos: 0,
-    products: []
-
-    
-}
+  contador_productos: 0,
+  products: [],
+};
 
 const mutations = {
-   
-    addToCart(state, payload){
+  addToCart(state, payload) {
     let item = payload;
-    item = { ...item, quantity: 1 }
+    item = { ...item, quantity: 1 };
 
-    if(state.products.length > 0){
-        var z = 0
-        for (var j = 0; j < state.products.length; j++){
-            let bool = (state.products[j]._id === item._id)
-            if (bool){
-                let itemIndex = state.products.findIndex(el => el._id === item._id)
-                state.products[itemIndex]["quantity"] +=1;
-                z = 1;
-            }
+    if (state.products.length > 0) {
+      var z = 0;
+      for (var j = 0; j < state.products.length; j++) {
+        let bool = state.products[j]._id === item._id;
+        if (bool) {
+          let itemIndex = state.products.findIndex((el) => el._id === item._id);
+          state.products[itemIndex]["quantity"] += 1;
+          z = 1;
         }
-        if (z == 0) {
-            state.products.push(item)
-        }
-
-    } else{
-//        state.products.push(state.topRated[0])
-        state.products.push(item)
+      }
+      if (z == 0) {
+        state.products.push(item);
+      }
+    } else {
+      //        state.products.push(state.topRated[0])
+      state.products.push(item);
     }
-    
-    state.contador_productos++
+
+    state.contador_productos++;
     //console.log(state.products)
-},
+  },
 
-    removeItem(state, payload){
-
-
-        if(state.products.length > 0){
-        for (var j = 0; j < state.products.length; j++){
-            let bool = (state.products[j]._id === payload._id)
-            if (bool) {
-                let index = state.products.findIndex(el => el._id === payload._id)
-                if (state.products[index]["quantity"] !== 0){
-                    state.products[index]["quantity"] -= 1
-                    state.contador_productos--
-                }
-                if (state.products[index]["quantity"] === 0){
-                    state.products.splice(index, 1)
-                }
-            }
+  removeItem(state, payload) {
+    if (state.products.length > 0) {
+      for (var j = 0; j < state.products.length; j++) {
+        let bool = state.products[j]._id === payload._id;
+        if (bool) {
+          let index = state.products.findIndex((el) => el._id === payload._id);
+          if (state.products[index]["quantity"] !== 0) {
+            state.products[index]["quantity"] -= 1;
+            state.contador_productos--;
+          }
+          if (state.products[index]["quantity"] === 0) {
+            state.products.splice(index, 1);
+          }
         }
+      }
     }
-}
+  },
 
-
-
-/*
+  /*
     addToCart(state, payload){
     let item = payload;
     item = { ...item, quantity: 1 }
@@ -96,34 +112,21 @@ const mutations = {
         }
     }
 */
-
-
-
-
-}
+};
 
 const actions = {
-
-    addToCart: (context, payload) => {
-        context.commit("addToCart", payload)
-    },
-    removeItem: (context, payload) => {
-        context.commit("removeItem", payload)
-    }
-
-}
-
-
-
-
+  addToCart: (context, payload) => {
+    context.commit("addToCart", payload);
+  },
+  removeItem: (context, payload) => {
+    context.commit("removeItem", payload);
+  },
+};
 
 const getters = {
-    contador: state => state.contador_productos,
-    array_productos: state => state.products
-
-}
-
-
+  contador: (state) => state.contador_productos,
+  array_productos: (state) => state.products,
+};
 
 /* Esto hay que añadirlo al los methods de Detalles productos
 
@@ -140,9 +143,7 @@ removeItem() {
 }
 */
 
-
-export default {state, getters, actions, mutations}
-
+export default { state, getters, actions, mutations };
 
 /*
 

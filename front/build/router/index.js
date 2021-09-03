@@ -1,32 +1,18 @@
-"use strict";
-
-var _interopRequireDefault = require("C:/Users/Usuario/Documents/SErgio Espabila/E08/front/node_modules/@babel/runtime/helpers/interopRequireDefault").default;
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-require("core-js/modules/es.object.to-string.js");
-
-var _interopRequireWildcard2 = _interopRequireDefault(require("C:/Users/Usuario/Documents/SErgio Espabila/E08/front/node_modules/@babel/runtime/helpers/esm/interopRequireWildcard"));
-
-var _vue = _interopRequireDefault(require("vue"));
-
-var _vueRouter = _interopRequireDefault(require("vue-router"));
-
-var _Home = _interopRequireDefault(require("../views/Home.vue"));
-
-var _Registro = _interopRequireDefault(require("../views/Registro.vue"));
-
-var _Login = _interopRequireDefault(require("../views/Login.vue"));
-
-_vue.default.use(_vueRouter.default);
-
+import "core-js/modules/es.object.to-string.js";
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../views/Home.vue";
+import Registro from "../views/Registro.vue";
+import Login from "../views/Login.vue";
+import Carrito from "../views/Carrito.vue";
+import Profile from "../views/Profile.vue";
+import Detalles from "../views/Detalles.vue";
+import store from '@/store/index.js';
+Vue.use(VueRouter);
 var routes = [{
   path: "/",
   name: "Home",
-  component: _Home.default
+  component: Home
 }, {
   path: "/about",
   name: "About",
@@ -34,23 +20,50 @@ var routes = [{
   // this generates a separate chunk (about.[hash].js) for this route
   // which is lazy-loaded when the route is visited.
   component: function component() {
-    return Promise.resolve().then(function () {
-      return (0, _interopRequireWildcard2.default)(require("../views/About.vue"));
-    });
+    return import(
+    /* webpackChunkName: "about" */
+    "../views/About.vue");
+  },
+  meta: {
+    requiresAuth: true
   }
 }, {
   path: "/registro",
   name: "Registro",
-  component: _Registro.default
+  component: Registro
 }, {
   path: "/login",
   name: "Login",
-  component: _Login.default
+  component: Login
+}, {
+  path: "/carrito",
+  name: "Carrito",
+  component: Carrito
+}, {
+  path: "/detalles/:id",
+  name: "Detalles",
+  component: Detalles
+}, {
+  path: "/profile",
+  name: "profile",
+  component: Profile
 }];
-var router = new _vueRouter.default({
+var router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes: routes
 });
-var _default = router;
-exports.default = _default;
+router.beforeEach(function (to, from, next) {
+  if (to.matched.some(function (record) {
+    return record.meta.requiresAuth;
+  })) {
+    if (store.state.token) {
+      next();
+    } else {
+      next('/login');
+    }
+  } else {
+    next();
+  }
+});
+export default router;

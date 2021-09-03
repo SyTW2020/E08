@@ -6,9 +6,7 @@ import Login from "../views/Login.vue";
 import Carrito from "../views/Carrito.vue";
 import Profile from "../views/Profile.vue";
 import Detalles from "../views/Detalles.vue";
-import store from '@/store/index.js'
-
-
+import store from "@/store/index.js";
 
 Vue.use(VueRouter);
 
@@ -24,10 +22,9 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => 
-    import(/* webpackChunkName: "about" */ "../views/About.vue"),
-    meta: {requiresAuth: true}
-   
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    meta: { requiresAuth: true },
   },
   {
     path: "/registro",
@@ -51,7 +48,7 @@ const routes = [
   },
   {
     path: "/profile",
-    name:"profile",
+    name: "profile",
     component: Profile,
   },
 ];
@@ -62,20 +59,16 @@ const router = new VueRouter({
   routes,
 });
 
-
-
-
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresAuth)) {
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
     if (store.state.token) {
       next();
     } else {
-      next('/login');
+      next("/login");
     }
   } else {
     next();
   }
 });
- 
 
 export default router;

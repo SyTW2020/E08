@@ -1,10 +1,10 @@
-var jwt = require('jsonwebtoken'); // middleware to validate token (rutas protegidas)
+var jwt = require("jsonwebtoken"); // middleware to validate token (rutas protegidas)
 
 
 var verifyToken = function verifyToken(req, res, next) {
-  var token = req.header('auth-token');
+  var token = req.header("auth-token");
   if (!token) return res.status(401).json({
-    error: 'Acceso denegado'
+    error: "Acceso denegado"
   });
 
   try {
@@ -13,7 +13,7 @@ var verifyToken = function verifyToken(req, res, next) {
     next(); // continuamos
   } catch (error) {
     res.status(400).json({
-      error: 'token no es válido'
+      error: "token no es válido"
     });
   }
 };

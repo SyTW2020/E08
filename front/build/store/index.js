@@ -1,23 +1,17 @@
-"use strict";
-
-var _interopRequireDefault = require("C:/Users/Usuario/Documents/SErgio Espabila/E08/front/node_modules/@babel/runtime/helpers/interopRequireDefault").default;
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+import Vue from "vue";
+import Vuex from "vuex";
+import log from './login.module';
+import productos from './productos.module';
+import registro from './registro.module';
+import profile from './perfil.module';
+import store from './store';
+Vue.use(Vuex);
+export default new Vuex.Store({
+  modules: {
+    log: log,
+    productos: productos,
+    registro: registro,
+    profile: profile,
+    store: store
+  }
 });
-exports.default = void 0;
-
-var _vue = _interopRequireDefault(require("vue"));
-
-var _vuex = _interopRequireDefault(require("vuex"));
-
-_vue.default.use(_vuex.default);
-
-var _default = new _vuex.default.Store({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {}
-});
-
-exports.default = _default;
