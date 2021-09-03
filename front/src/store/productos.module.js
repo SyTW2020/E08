@@ -4,11 +4,12 @@ const url ='http://localhost:4000/products'
 
 const state = {
     products: [],
-    carrito_products : []
+    detalles : {}
 }
 
 const getters = {
     allProducts : state => state.products,
+    detallesProductos : state => state.detalles
    
 }
 
@@ -19,15 +20,19 @@ const actions = {
     },
 
     async obtenerDataProducto( { commit }, producto) {
-        await axios.get(`${url}${producto.id}`);
-        commit('get', producto);
+        console.log(producto)
+        const res = await axios.get(`${url}/${producto}`);
+        console.log(res)
+        commit('getProduct', res.data);
     },
     
 
 }
 const mutations = {
 
-    setProducts : (state, products) => state.products = products 
+    setProducts : (state, products) => state.products = products,
+    getProduct : (state, producto) => state.detalles = producto,
+    
 }
 
 export default {  state, getters, actions, mutations}

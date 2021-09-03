@@ -24,10 +24,13 @@ const actions = {
         }
       },
       cerrarSesion({ commit }) {
+       
         localStorage.removeItem('token')
         localStorage.removeItem('usuario')
         commit('setToken',null)
-      }
+      },
+
+      
           
 };
 
@@ -35,7 +38,16 @@ const mutations = {
     setToken(state,payload){
       state.token=payload
     },
-    };
-  const getters = {}
+    }
+    
+  const getters = {
+    comprobarLog(){
+      if(localStorage.getItem('token')){
+        return true
+      }else{
+        return false
+      }
+    }
+  }
 
 export default {state, getters, actions, mutations}

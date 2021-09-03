@@ -13,85 +13,25 @@
 
           <div class="col-12 mb-0">
             <figure class="view overlay rounded z-depth-1 main-img">
-              <a href="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg"
-                data-size="710x823">
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg"
+                <img :src="detallesProductos.imgUrl"
                   class="img-fluid z-depth-1">
-              </a>
-            </figure>
-            <figure class="view overlay rounded z-depth-1" style="visibility: hidden;">
-              <a href="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg"
-                data-size="710x823">
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg"
-                  class="img-fluid z-depth-1">
-              </a>
-            </figure>
-            <figure class="view overlay rounded z-depth-1" style="visibility: hidden;">
-              <a href="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13a.jpg"
-                data-size="710x823">
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13a.jpg"
-                  class="img-fluid z-depth-1">
-              </a>
-            </figure>
-            <figure class="view overlay rounded z-depth-1" style="visibility: hidden;">
-              <a href="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14a.jpg"
-                data-size="710x823">
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14a.jpg"
-                  class="img-fluid z-depth-1">
-              </a>
             </figure>
           </div>
-          <div class="col-12">
-            <div class="row">
-              <div class="col-3">
-                <div class="view overlay rounded z-depth-1 gallery-item">
-                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg"
-                    class="img-fluid">
-                  <div class="mask rgba-white-slight"></div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="view overlay rounded z-depth-1 gallery-item">
-                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13a.jpg"
-                    class="img-fluid">
-                  <div class="mask rgba-white-slight"></div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="view overlay rounded z-depth-1 gallery-item">
-                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14a.jpg"
-                    class="img-fluid">
-                  <div class="mask rgba-white-slight"></div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="view overlay rounded z-depth-1 gallery-item">
-                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg"
-                    class="img-fluid">
-                  <div class="mask rgba-white-slight"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+          
+         
         </div>
 
       </div>
 
     </div>
     <div class="col-md-6">
-
-      <h5>Fantasy T-shirt</h5>
-      <p class="mb-2 text-muted text-uppercase small">Shirts</p>
-      <p><span class="mr-1"><strong>$12.99</strong></span></p>
-      <p class="pt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit
-        error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio,
-        officia quis dolore quos sapiente tempore alias.</p>
+      <h5>{{detallesProductos.name}}</h5>
+      <p class="mb-2 text-muted text-uppercase small">{{detallesProductos.categoria}}</p>
+      <p><span class="mr-1"><strong>{{detallesProductos.precio}}</strong></span></p>
+      <p class="pt-1">{{detallesProductos.descripcion}}</p>
 
       <hr>
-      <b-button variant="primary" class="mr-1 mb-2 ">
-        COMPRAR YA <b-icon icon="credit-card" aria-hidden="true"></b-icon>
-      </b-button>
-      <b-button v-on:click="addToCart" variant="outline-info" class="mr-1 mb-2 ">
+      <b-button v-on:click="addToCart(detallesProductos)" variant="outline-info" class="mr-1 mb-2 ">
         <b-icon icon="cart4" aria-hidden="true"></b-icon> ADD TO CART
       </b-button>
     </div>
@@ -103,12 +43,17 @@
 </template>
 
 <script>
+import {mapActions,mapGetters} from 'vuex'
 export default {
 name: "Detalles_Components",
+
+computed: {
+  ...mapGetters(['detallesProductos'])
+},
 methods: {
-  addToCart() {
+  addToCart(detallesProductos) {
 //    this.$store.commit("addToCart")
-    this.$store.dispatch("addToCart", this.details);
+    this.$store.dispatch("addToCart", detallesProductos);
 
 },
 
@@ -116,7 +61,12 @@ removeItem() {
 //    this.$store.commit("removeItem")
     this.$store.dispatch("removeItem", this.details);
 
-}
+},
+...mapActions(['obtenerDataProducto'])
+
+},
+mounted(){
+  this.obtenerDataProducto(this.$route.params.id)
 }
 }
 </script>

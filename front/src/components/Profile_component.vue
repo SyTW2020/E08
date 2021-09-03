@@ -3,11 +3,12 @@
     <h1 class="text-center border-b-2 w-full text-5xl mt-11 max-w-screen-lg">Mi cuenta Elective</h1> 
     <div class="flex w-7/12 justify-center  my-10 space-x-20 max-w-screen-lg">
       <!-- Imagen perfil -->
-      <div class="flex flex-col space-y-4">
-        <div class="h-60 w-60">
-          <img src="../assets/perfil_defecto2.jpg" alt="Imagen de perfil" class="h-full w-full object-cover rounded-full">
-        </div>
-        <button class="bg-white shadow-sm h-10 mx-4 rounded border">Cambiar foto</button>
+      <div class="flex flex-col space-y-4 ">
+        <div class="flex h-60 w-60 object-cover rounded-full items-center justify-center" v-bind:style="{backgroundColor: randomcolor()}">
+          <span class=" text-black text-9xl"> {{ allData.nombre.substring(0,1) }} </span>
+<!--           <img src="../assets/perfil_defecto2.jpg" alt="Imagen de perfil" class="h-full w-full object-cover rounded-full"> -->
+      </div>
+        <button @click="randomcolor" class="bg-white shadow-sm h-10 mx-4 rounded border">Cambiar foto</button>
       </div>
       <!-- Datos personales -->
       <div class="w-full">
@@ -73,22 +74,27 @@ export default {
   ...mapGetters(['allData'])
 },
 methods: {
-  ...mapActions(['datosUser'])
+  ...mapActions(['datosUser']),
+  randomcolor() {
+    var h = Math.floor(Math.random()*360);
+    var s = Math.floor(Math.random()*100);
+    var l = Math.floor(Math.random()*100);
+    if (l <= 50)
+      l = 60;
+    var mycolor = `hsl(${h}deg, ${s}%, ${l}%)`;
+
+    console.log(mycolor);
+    return mycolor;
+  }
 },
 mounted(){
-  console.log("Llamando datos user")
   this.datosUser()
 }
 
 
 
-  
-
 }
-
-
 </script>
 
 <style>
-
 </style>

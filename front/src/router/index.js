@@ -6,7 +6,8 @@ import Login from "../views/Login.vue";
 import Carrito from "../views/Carrito.vue";
 import Profile from "../views/Profile.vue";
 import Detalles from "../views/Detalles.vue";
-import store from "../store/index"
+import store from '@/store/index.js'
+
 
 
 Vue.use(VueRouter);
@@ -25,7 +26,7 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => 
     import(/* webpackChunkName: "about" */ "../views/About.vue"),
-    meta: {rutaProtegida: true}
+    meta: {requiresAuth: true}
    
   },
   {
@@ -44,7 +45,7 @@ const routes = [
     component: Carrito,
   },
   {
-    path: "/detalles",
+    path: "/detalles/:id",
     name: "Detalles",
     component: Detalles,
   },
@@ -52,7 +53,6 @@ const routes = [
     path: "/profile",
     name:"profile",
     component: Profile,
-    meta: {rutaProtegida: true}
   },
 ];
 
@@ -62,18 +62,20 @@ const router = new VueRouter({
   routes,
 });
 
-/* eslint-disable */
-router.beforeEach((to, from, next) => {
 
-  const checkRuta = to.matched.some(item => item.meta.rutaProtegida)
-  
-  if( checkRuta && store.state.token === null ) {
-    next('/')
-  } else{
-    next()
+
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (store.state.token) {
+      next();
+    } else {
+      next('/login');
+    }
+  } else {
+    next();
   }
-  
-  })
-  /* eslint-enable */
+});
+ 
 
 export default router;
