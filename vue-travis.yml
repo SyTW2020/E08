@@ -8,7 +8,7 @@ dist: xenial
 
 branches:
   only:
-  - david-front
+  - main
 
 cache:
   directories:
@@ -26,5 +26,5 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   on:
-    branch: david-front
+    branch: main
 
