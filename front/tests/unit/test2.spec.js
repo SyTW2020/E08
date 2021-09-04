@@ -1,10 +1,10 @@
-import { shallowMount, mount } from "@vue/test-utils";
+import { shallowMount } from "@vue/test-utils";
 import Login from "@/components/Login_component";
 import Register from "@/components/Register_component";
 
 
-describe('Prueba 2', () => {
-    let wrapper;
+describe.skip('Prueba 2', () => {
+    const wrapper;
     beforeEach(() => {
         wrapper = shallowMount(Register, {
             methods: { signup: () => { } },
@@ -30,8 +30,8 @@ describe('Prueba 2', () => {
     });
 })
 
-describe('Prueba 3', () => {
-    let wrapper;
+describe.skip('Prueba 3', () => {
+    const wrapper;
     beforeEach(() => {
         wrapper = shallowMount(Login, {
             methods: { login: () => { } },

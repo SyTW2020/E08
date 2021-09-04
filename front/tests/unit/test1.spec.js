@@ -1,7 +1,7 @@
 import Login_component from "@/components/Login_component";
 
 
-describe('Prueba 1', () => {
+describe.skip('Prueba 1', () => {
     it('should create', () => {
         // usuario:{ 
         //     email: 'test';
