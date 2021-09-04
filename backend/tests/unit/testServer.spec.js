@@ -1,5 +1,5 @@
 const supertest = require('supertest');
-const app = require('../../index');
+const app = require('../../../front/index');
 
 const api = supertest(app);
 
@@ -11,8 +11,8 @@ test('Pruebas Servidor', async () => {
 
 })
 
-const validaToken = require("../../src/router/validate-tokens");
-const admin = require("../../src/router/admin");
+const validaToken = require("../../../front/src/router/validate-tokens");
+const admin = require("../../../front/src/router/admin");
 
 test('Pruebas Servidor', async () => {
     await api
