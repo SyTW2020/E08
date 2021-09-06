@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:4000/products";
+const url = "https://elective-backend.herokuapp.com/products";
 
 const state = {
   products: [],

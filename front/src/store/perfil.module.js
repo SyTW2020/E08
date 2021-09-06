@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:4000/auth/profile";
+const url = "https://elective-backend.herokuapp.com/auth/profile";
 
 const state = {
   datos: {},
