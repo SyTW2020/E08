@@ -86,7 +86,7 @@
           </router-link>
           <!--<button v-if="logged" class="gradient font-bold text-white py-2 px-3 rounded">INICIADO!</button>-->
           <div
-            v-if="logged"
+            v-if ="comprobarLog"
             @mouseover="dropdownOpen = true"
             @mouseleave="dropdownOpen = false"
           >
@@ -116,10 +116,10 @@
                   :style="{ backgroundColor: randomColor() }"
                 >
                   <span class="text-black text-xl font-bold">
-                    {{ allData.nombre.substring(0, 1) }}
+                    U
                   </span>
                 </div>
-                <span class="font-semibold"> {{ allData.username }} </span>
+                <span class="font-semibold"> User </span>
               </div>
             </button>
 
@@ -176,7 +176,7 @@
 import { mapGetters, mapActions } from "vuex";
 export default {
   computed: {
-    ...mapGetters(["contador", "allData"]),
+    ...mapGetters(["contador","comprobarLog"]),
   },
 
   prop: {
@@ -187,7 +187,7 @@ export default {
       }, */
   },
   methods: {
-    ...mapActions(["datosUser", "cerrarSesion"]),
+    ...mapActions(["cerrarSesion","readToken"]),
 
     randomColor() {
       var h = Math.floor(Math.random() * 360);
@@ -198,14 +198,17 @@ export default {
       console.log(mycolor);
       return mycolor;
     },
+    
   },
-  mounted() {
-    this.datosUser();
-    this.randomColor();
+  beforeMount() {
+      
+      this.readToken();
+      this.randomColor();
+
   },
   data() {
     return {
-      logged: true,
+      login : true,
       dropdownOpen: false,
     };
   },

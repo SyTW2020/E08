@@ -36,13 +36,9 @@ const mutations = {
 };
 
 const getters = {
-  comprobarLog() {
-    if (localStorage.getItem("token")) {
-      return true;
-    } else {
-      return false;
-    }
-  },
+  comprobarLog: state => !!state.token
+  
+  
 };
 
 export default { state, getters, actions, mutations };
