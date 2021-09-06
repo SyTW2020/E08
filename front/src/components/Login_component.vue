@@ -112,6 +112,7 @@
 
         <div class="relative flex justify-between">
           <button
+        
             type="submit"
             class="
               w-full
@@ -194,6 +195,7 @@
 <script>
 import { mapActions } from "vuex";
 
+
 export default {
   name: "Login_component",
   data() {
@@ -206,6 +208,7 @@ export default {
   },
   methods: {
     ...mapActions(["login"]),
+  
   },
 };
 </script>
