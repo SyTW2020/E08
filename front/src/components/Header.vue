@@ -116,10 +116,10 @@
                   :style="{ backgroundColor: randomColor() }"
                 >
                   <span class="text-black text-xl font-bold">
-                    U
+                    {{ allData.nombre.substring(0, 1) }}
                   </span>
                 </div>
-                <span class="font-semibold"> User </span>
+                <span class="font-semibold"> {{allData.username}} </span>
               </div>
             </button>
 
@@ -176,7 +176,7 @@
 import { mapGetters, mapActions } from "vuex";
 export default {
   computed: {
-    ...mapGetters(["contador","comprobarLog"]),
+    ...mapGetters(["contador","comprobarLog","allData"]),
   },
 
   prop: {
@@ -187,7 +187,7 @@ export default {
       }, */
   },
   methods: {
-    ...mapActions(["cerrarSesion","readToken"]),
+    ...mapActions(["cerrarSesion","readToken","datosUser"]),
 
     randomColor() {
       var h = Math.floor(Math.random() * 360);
@@ -201,6 +201,10 @@ export default {
     
   },
   beforeMount() {
+
+      if (!this.comprobarLog) {
+        this.datosUser()
+      };
       
       this.readToken();
       this.randomColor();
