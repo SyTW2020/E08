@@ -11,13 +11,13 @@
 - Hernán Daniel González Guanipa
     - [alu01011050218@ull.edu.es](mailto:alu01011050218@ull.edu.es)
 
-    ### Informe
+### Informe
 
-    Documentación detallada de la aplicación web
+Documentación detallada de la aplicación web
 
-    ### Aplicación
+### Aplicación
 
-    [Web](https://string-sergio.github.io/La_Web/#/) desplegada
+[Web](https://string-sergio.github.io/La_Web/#/) desplegada
 
     ---
 
