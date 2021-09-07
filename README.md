@@ -13,13 +13,13 @@
 
 ### Informe
 
-Documentación detallada de la aplicación web
+[Documentación](https://drive.google.com/file/d/1iJOJrPNKa5rGqI1puPLPP8PNZfdpmxjm/view?usp=sharing) detallada de la aplicación web
 
 ### Aplicación
 
 [Web](https://string-sergio.github.io/La_Web/#/) desplegada
 
-    ---
+---
 
 ## Introducción
 
